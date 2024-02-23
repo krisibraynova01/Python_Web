@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main_content %}
+
+<!-- Delete Profile Page -->
+<section class="deleteProfilePage">
+  <form action="{% url 'delete_profile' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Delete Profile</legend>
+      <div class="container">
+        <!-- Display a confirmation message -->
+        <p>Are you sure you want to delete your profile and all associated albums?</p>
+
+        <!-- Button for Deleting the Profile -->
+        <button class="delete-profile" type="submit">Delete Profile</button>
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+{% endblock %}
